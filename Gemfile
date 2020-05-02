@@ -66,3 +66,6 @@ gem 'erb2haml'
 gem "font-awesome-sass"
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'

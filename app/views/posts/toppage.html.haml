@@ -9,14 +9,31 @@
 
     .header__sub
       .header__sub__1
-        新規会員登録
+        - if receiver_signed_in?
+          %strong= link_to current_receiver.name,page_class
+          -# , pages_show_path
+          = link_to 'プロフィール変更', edit_receiver_registration_path, class: "receiver_left"
+          = link_to 'ログアウト', destroy_receiver_session_path, method: :delete
+        - else
+          = link_to 'サインアップ', new_receiver_registration_path, class: "receiver_left"
+          = link_to 'ログイン', new_receiver_session_path
+
       .header__sub__2
-        ログイン
+        - if advisor_signed_in?
+          %strong= link_to current_advisor.name,page_class
+          -# , pages_show_path
+          = link_to 'プロフィール変更', edit_advisor_registration_path
+          = link_to 'ログアウト', destroy_advisor_session_path, method: :delete, class: "advisor_right"
+        - else
+          = link_to 'サインアップ', new_advisor_registration_path
+          = link_to 'ログイン', new_advisor_session_path, class: "advisor_right"
 
 
   .body
     .body__main
       .body__main__top 
+        = link_to 'メンバーのかたはこちら'
+      .body__main__middle
         our mission
       .body__main__bottom
         〜自分史上最高の自分に〜

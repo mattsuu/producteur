@@ -4,7 +4,7 @@ class Receiver < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,:timeoutable
          
-  has_many :messages
   has_many :member_chats
+  has_many :messages
 end
 

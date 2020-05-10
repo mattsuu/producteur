@@ -9,7 +9,7 @@ class DeviseCreateAdvisors < ActiveRecord::Migration[5.2]
       t.string :encrypted_password, null: false, default: "", unique:true
       t.string :gender,             null: false, default: "", index: true
       t.string :job,                null: false, index: true
-      t.string :shop,               default: ""
+      t.string :shop,               null: false, default: ""
 
       
 

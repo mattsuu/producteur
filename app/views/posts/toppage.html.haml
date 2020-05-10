@@ -14,19 +14,29 @@
           -# , pages_show_path
           = link_to 'プロフィール変更', edit_receiver_registration_path, class: "receiver_left"
           = link_to 'ログアウト', destroy_receiver_session_path, method: :delete
-        - else
-          = link_to 'サインアップ', new_receiver_registration_path, class: "receiver_left"
-          = link_to 'ログイン', new_receiver_session_path
-
-      .header__sub__2
-        - if advisor_signed_in?
+        - elsif advisor_signed_in?
           %strong= link_to current_advisor.name,page_class
           -# , pages_show_path
           = link_to 'プロフィール変更', edit_advisor_registration_path
           = link_to 'ログアウト', destroy_advisor_session_path, method: :delete, class: "advisor_right"
         - else
+          一般の方
+          = link_to 'サインアップ', new_receiver_registration_path, class: "receiver_left"
+          = link_to 'ログイン', new_receiver_session_path
+          美容職の方
           = link_to 'サインアップ', new_advisor_registration_path
           = link_to 'ログイン', new_advisor_session_path, class: "advisor_right"
+
+      -# .header__sub__2
+      -#   美容職の方
+      -#   - if advisor_signed_in?
+      -#     %strong= link_to current_advisor.name,page_class
+      -#     -# , pages_show_path
+      -#     = link_to 'プロフィール変更', edit_advisor_registration_path
+      -#     = link_to 'ログアウト', destroy_advisor_session_path, method: :delete, class: "advisor_right"
+      -#   - else
+      -#     = link_to 'サインアップ', new_advisor_registration_path
+      -#     = link_to 'ログイン', new_advisor_session_path, class: "advisor_right"
 
 
   .body

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_21_162003) do
+ActiveRecord::Schema.define(version: 2020_05_03_063551) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 2020_04_21_162003) do
     t.index ["reset_password_token"], name: "index_advisors_on_reset_password_token", unique: true
   end
 
+  create_table "message_chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.string "image"
+    t.bigint "receiver_id"
+    t.bigint "advisor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["advisor_id"], name: "index_message_chats_on_advisor_id"
+    t.index ["receiver_id"], name: "index_message_chats_on_receiver_id"
+  end
+
   create_table "receivers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -47,4 +58,6 @@ ActiveRecord::Schema.define(version: 2020_04_21_162003) do
     t.index ["reset_password_token"], name: "index_receivers_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "message_chats", "advisors"
+  add_foreign_key "message_chats", "receivers"
 end

@@ -1,0 +1,2 @@
+module MemberChatsHelper
+end

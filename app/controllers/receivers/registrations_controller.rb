@@ -42,7 +42,7 @@ class Receivers::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # def configure_permitted_parameters
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
@@ -67,4 +67,14 @@ class Receivers::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  #アカウント登録後のリダイレクト先
+  def after_sign_up_path_for(resource)
+    member_chats_path
+ end
+ 
+ #アカウント編集後のリダイレクト先
+ def after_update_path_for(resource)
+   member_chats_path
+ end
 end

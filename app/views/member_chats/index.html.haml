@@ -1,7 +1,6 @@
 .top
   - if receiver_signed_in?
-    %strong= link_to current_receiver.name,page_class
-    -# , pages_show_path
+    %strong= link_to current_receiver.name
     = link_to 'プロフィール変更', edit_receiver_registration_path, class: "receiver_left"
     = link_to 'ログアウト', destroy_receiver_session_path, method: :delete
     = link_to '投稿', new_member_chat_path
@@ -11,21 +10,10 @@
       %p
       %span 投稿内容: 
       = link_to member_chat.content
-      = link_to member_chat.receiver.name
-      -# - member_chat
-      -# = link_to member_chat.receiver.name
-      -# - member_chat.content
-      -# = link_to @member_chat.content
-      -# , tweet_path(tweet.id)
-
-    -# .advisor_information
-    -#   美容職の方々
-      -# - @advisors.each do |advisor|
-      -#   = advisor.name
+      = link_to member_chat.receiver.name, member_chat_path(member_chat.id)
 
   - elsif advisor_signed_in?
-    %strong= link_to current_advisor.name,page_class
-    -# , pages_show_path
+    %strong= link_to current_advisor.name
     = link_to 'プロフィール変更', edit_advisor_registration_path
     = link_to 'ログアウト', destroy_advisor_session_path, method: :delete, class: "advisor_right"
     -# = link_to '投稿', new_member_chat_path
@@ -35,22 +23,4 @@
       %p
       %span 投稿内容: 
       = link_to member_chat.content
-      = link_to member_chat.receiver.name
-      -# = link_to member_chat.receiver.name
-    -# .receiver_information
-    -#   一般の方々
-    -#   - @receivers.each do |receiver|
-        -# = receiver.name
-      
-  
-
-
--# .messages
-  -# = render @member_chats
-
--# - if receiver_signed_in?
--#   - @member_chats.each do |m|
--#     %div
--#       %span{:style => "color: red;"}= m.content
-      -# = m.user.email
-    
+      = link_to member_chat.receiver.name, member_chat_path(member_chat.id)

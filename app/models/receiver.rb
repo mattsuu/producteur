@@ -5,6 +5,6 @@ class Receiver < ApplicationRecord
          :recoverable, :rememberable, :validatable,:timeoutable
          
   has_many :member_chats
-  has_many :messages
+  has_many :talkrooms
 end
 

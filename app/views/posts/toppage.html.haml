@@ -27,17 +27,6 @@
           = link_to 'サインアップ', new_advisor_registration_path
           = link_to 'ログイン', new_advisor_session_path, class: "advisor_right"
 
-      -# .header__sub__2
-      -#   美容職の方
-      -#   - if advisor_signed_in?
-      -#     %strong= link_to current_advisor.name,page_class
-      -#     -# , pages_show_path
-      -#     = link_to 'プロフィール変更', edit_advisor_registration_path
-      -#     = link_to 'ログアウト', destroy_advisor_session_path, method: :delete, class: "advisor_right"
-      -#   - else
-      -#     = link_to 'サインアップ', new_advisor_registration_path
-      -#     = link_to 'ログイン', new_advisor_session_path, class: "advisor_right"
-
 
   .body
     .body__main
@@ -46,7 +35,7 @@
       .body__main__middle
         our mission
       .body__main__bottom
-        〜自分史上最高の自分に〜
+        Howーto
         .body__main__bottom__1
           美容のプロと気軽に！1対1で相談できる！
           人に言いにくい悩みも気軽に内緒で！
@@ -58,4 +47,4 @@
     %li わからないことは直接相談して解決していただけます。
     %li 匿名でご使用いただけます。(予約等される場合は、本人名義が必要になります)
     %li メッセージでやり取りしていただいて、そのまま施術の予約をしていただくこともできます。
-    
+    %li お互いに気持ちの良いやりとりをしていただくために、虚偽の深刻等はしないようにお願いします。

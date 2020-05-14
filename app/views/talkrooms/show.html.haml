@@ -1,0 +1,36 @@
+%h5
+  = link_to "メッセージするユーザーを選択し直す", member_chats_path
+ 
+%h2 トークルーム
+- if receiver_signed_in?
+  %h3
+    - @advisor.name
+    とのチャットルーム
+  .chat-field
+    - @messages.each do |m|
+      - if m.is_receiver
+        .right-message
+          = m.content
+          = m.image
+      - else
+        .left-message
+          = m.content
+          = m.image
+- elsif advisor_signed_in?
+  %h3
+    - @receiver.name
+    とのチャットルーム
+  .chat-field
+    - @messages.each do |m|
+      - if m.is_receiver
+        .left-message
+          = m.content
+          = m.image
+      - else
+        .right-message
+          = m.content
+          = m.image
+= form_for [@talkroom, @message] do |f|
+  = f.text_field :content
+  = f.file_field :image
+  = f.submit "メッセージを送る"

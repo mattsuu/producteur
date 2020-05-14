@@ -1,0 +1,27 @@
+%h1 プロフィール
+%p
+  名前 : #{@receiver.name}
+%p 
+  性別 : #{@receiver.gender}
+
+- if receiver_signed_in?
+  - @advisors.each do |advisor|
+    - if @advisor_ids.include?(advisor.id)
+      %br/
+      = link_to "チャットへ", talkroom_path(current_receiver.talkrooms.find_by(advisor_id: advisor.id))
+      %br/
+    - else
+      = form_for Talkroom.new do |f|
+        = f.hidden_field :advisor_id, :value => advisor.id
+        = f.submit
+- elsif advisor_signed_in?
+  - @receivers.each do |receiver|
+    - if @receiver_ids.include?(receiver.id)
+      %br/
+      = link_to "チャットへ", talkroom_path(current_advisor.talkrooms.find_by(receiver_id: receiver.id))
+      %br/
+    - else
+      = form_for Talkroom.new do |f|
+        = f.hidden_field :receiver_id, :value => receiver.id
+        = f.submit
+   

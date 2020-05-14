@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room: one
+  is_receiver: false
+  content: MyText
+  image: MyString
+
+two:
+  room: two
+  is_receiver: false
+  content: MyText
+  image: MyString

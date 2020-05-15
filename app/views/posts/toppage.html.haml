@@ -2,10 +2,10 @@
   .header
     .header__main
       .header__main__top
-        .header__main__top__1
-          producteur  
-      .header__main__bottom
-        %a プロの手でワンランク上の自分を目指すあなたに！
+        %p
+          %span
+            producteur  
+            
 
     .header__sub
       .header__sub__1
@@ -20,31 +20,40 @@
           = link_to 'プロフィール変更', edit_advisor_registration_path
           = link_to 'ログアウト', destroy_advisor_session_path, method: :delete, class: "advisor_right"
         - else
+          %i.fas.fa-user
           一般の方
           = link_to 'サインアップ', new_receiver_registration_path, class: "receiver_left"
           = link_to 'ログイン', new_receiver_session_path
+          %i.fas.fa-user-tie
           美容職の方
           = link_to 'サインアップ', new_advisor_registration_path
           = link_to 'ログイン', new_advisor_session_path, class: "advisor_right"
 
-
   .body
     .body__main
-      .body__main__top 
-        = link_to 'メンバーのかたはこちら'
-      .body__main__middle
-        our mission
-      .body__main__bottom
-        Howーto
-        .body__main__bottom__1
-          美容のプロと気軽に！1対1で相談できる！
-          人に言いにくい悩みも気軽に内緒で！
-
-
+      %b Our mission 
+      .body__main__top
+        %d プロの手で史上最高のあなたにすること
+      .body__main__top
+        %d 美容のプロと気軽に相談できる場を提供すること
+      .body__main__top
+        %d お客様目線でやりとりできる場を提供すること
+    .body__sub
+      %c Howーto
+      .body__sub__bottom
+        .body__sub__bottom__plus
+          今気になっていることや悩んでいることをメンバーチャットでつぶやいてみる。（例：①前髪失敗しました！  ②今期オススメの赤色のリップ知りたい！   、、、etc）
+        .body__sub__bottom__plus
+          美容師や美容部員の方からつぶやきに対してメッセージが来た時点でやりとりスタートです。（例：①前髪の大得意です！  ②今期のオススメは〇〇です！   、、、etc）
+        .body__sub__bottom__plus
+          気に入った方やお店があれば、そのままご予約いただくことも可能です。
 
   .footer
-    %li 髪型やメイク等の美容に関係する画像をあげていただいて、やり取りできます。
-    %li わからないことは直接相談して解決していただけます。
-    %li 匿名でご使用いただけます。(予約等される場合は、本人名義が必要になります)
-    %li メッセージでやり取りしていただいて、そのまま施術の予約をしていただくこともできます。
-    %li お互いに気持ちの良いやりとりをしていただくために、虚偽の深刻等はしないようにお願いします。
+    %i.far.fa-bell 注意事項
+    .footer__plus
+      %li 基本的には、チャットにつぶやいてそれに対してのメッセージが来るのを待つ形になります。
+      %li オンライン上でのやりとりがメインなので、個人情報のやりとりにはご注意ください。
+      %li お互いに気持ちの良いやりとりをしていただくために、虚偽の申告等はしないようにお願いします。
+      %li メッセージでやり取りしていただいて、そのまま施術の予約をしていただくこともできます。
+      %li 匿名でご登録いただいて使用することも可能です。(予約等される場合は、本人名義が必要になります
+    

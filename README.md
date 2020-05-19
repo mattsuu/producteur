@@ -14,12 +14,55 @@
 |email|string|null: false, default: "", unique:true|
 |encrypted_password|string|null: false, default: "", unique:true|
 |gender|string|null: false, default: "", index: true|
-|age|string|null: false, default: "", index: true|
+|age|integer|null: false, default: "", index: true|
+#### Association
+- has_many :member_chats
+- has_many :talkrooms
+
+### advisorsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|email|string|null: false, default: "", unique:true|
+|encrypted_password|string|null: false, default: "", unique:true|
+|gender|string|null: false, default: "", index: true|
+|age|integer|null: false, default: "", index: true|
 |job|string|null: false, index: true|
 |shop|string|null: false, default: ""|
 #### Association
 - has_many :member_chats
 - has_many :talkrooms
+
+### member_chatsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|content|text|------|
+|receiver_id|integer|foreign_key: true|
+|advisor_id|integer|foreign_key: true|
+#### Asociation
+- belongs_to :receiver
+- belongs_to :advisor
+
+### talkroomsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|receiver_id|integer|foreign_key: true|
+|advisor_id|integer|foreign_key: true|
+#### Asociation
+- belongs_to :receiver
+- belongs_to :advisor
+
+- has_many :messages
+
+### messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|content|text|------|
+|image|string|------|
+|talkroom_id|integer|foreign_key: true|
+|is_receiver|integer|---|
+#### Asociation
+- belongs_to :talkroom
 
 ## アプリ概要
 　アプリ名はプロデューサーという意味。<br>

@@ -4,7 +4,7 @@
 　Producteur
  
 ## アプリケーション画面
-　Producteur(matsunoshouta/ピクチャ/producteur-top.png)
+　Producteur(producteur-top画像.png)
 https://i.gyazo.com/4a8440e8894a04858afc105eb0b6b818.png
 
 ## アプリ概要

@@ -5,7 +5,6 @@
  
 ## アプリケーション画面
 　![producteur](producteur-top画像.png)
-https://i.gyazo.com/4a8440e8894a04858afc105eb0b6b818.png
 
 ## アプリ概要
 　アプリ名はプロデューサーという意味。<br>
@@ -14,6 +13,12 @@ https://i.gyazo.com/4a8440e8894a04858afc105eb0b6b818.png
 　むしろ、一般の方からのアプローチは出来ないようになっている。<br>
 　お互いにメッセージのやりとりをして気に入れば、そのまま予約等に進むことも出来る。<br>
 　基本的には、予約等をするアプリではなく、髪型やメイクに関する悩み解決がメイン。<br>
+ 
+## Producteur DB設計
+　receiversテーブル
+　|Column|Type|Options|
+　|------|----|-------|
+　|name|string|null: false, index: true|
  
 ## アプリ機能
 　新規登録・ログイン機能<br>

@@ -10,8 +10,16 @@
 ### receiversテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false, index: true|
+|email|string|null: false, default: "", unique:true|
+|encrypted_password|string|null: false, default: "", unique:true|
+|gender|string|null: false, default: "", index: true|
+|age|string|null: false, default: "", index: true|
+|job|string|null: false, index: true|
+|shop|string|null: false, default: ""|
+#### Association
+has_many :member_chats
+has_many :talkrooms
 
 ## アプリ概要
 　アプリ名はプロデューサーという意味。<br>

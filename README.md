@@ -4,7 +4,7 @@
 　Producteur
  
 ## アプリケーション画面
-　Producteur(producteur-top画像.png)
+　https://github.com/mattsuu/producteur/blob/master/producteur-top%E7%94%BB%E5%83%8F.png
 https://i.gyazo.com/4a8440e8894a04858afc105eb0b6b818.png
 
 ## アプリ概要

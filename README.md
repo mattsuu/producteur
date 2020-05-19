@@ -60,7 +60,7 @@
 |content|text|------|
 |image|string|------|
 |talkroom_id|integer|foreign_key: true|
-|is_receiver|integer|---|
+|is_receiver|integer|------|
 #### Asociation
 - belongs_to :talkroom
 

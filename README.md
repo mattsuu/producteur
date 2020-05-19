@@ -18,8 +18,8 @@
 |job|string|null: false, index: true|
 |shop|string|null: false, default: ""|
 #### Association
-has_many :member_chats
-has_many :talkrooms
+- has_many :member_chats
+- has_many :talkrooms
 
 ## アプリ概要
 　アプリ名はプロデューサーという意味。<br>

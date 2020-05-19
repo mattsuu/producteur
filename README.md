@@ -6,6 +6,13 @@
 ## アプリケーション画面
 　![producteur](producteur-top画像.png)
 
+## DB設計
+### receiversテーブル
+　|Column|Type|Options|
+　|------|----|-------|
+　|user_id|integer|null: false, foreign_key: true|
+　|group_id|integer|null: false, foreign_key: true|
+
 ## アプリ概要
 　アプリ名はプロデューサーという意味。<br>
 　美容師や美容部員の方々とそのお客さんとなる一般の方を繋ぐアプリケーション。<br>

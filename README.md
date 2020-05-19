@@ -8,10 +8,10 @@
 
 ## DB設計
 ### receiversテーブル
-　|Column|Type|Options|
-　|------|----|-------|
-　|user_id|integer|null: false, foreign_key: true|
-　|group_id|integer|null: false, foreign_key: true|
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ## アプリ概要
 　アプリ名はプロデューサーという意味。<br>
